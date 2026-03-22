@@ -1,5 +1,4 @@
 import streamlit as st
-import FinanceDataReader as fdr
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
