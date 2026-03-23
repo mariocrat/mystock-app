@@ -27,7 +27,7 @@ st.markdown("---")
 
 # 사이드바에 메뉴 생성
 st.sidebar.title("메뉴 선택")
-menu = st.bar.selectbox(
+menu = st.sidebar.selectbox(
     "원하는 기능을 선택하세요:",
     ["내 매매 타점 복기", "차트 트레이닝 퀴즈"]
 )
@@ -845,7 +845,7 @@ if menu == "내 매매 타점 복기":
     st.header("📊 내 매매 타점 복기")
     
     # Gemini API 키 입력 (사이드바 최상단)
-    st.bar.subheader("🔑 API 설정")
+    st.sidebar.subheader("🔑 API 설정")
     
     # 1. 초기 키 값 설정 (st.secrets에서 자동 불러오기)
     default_api_key = ""
