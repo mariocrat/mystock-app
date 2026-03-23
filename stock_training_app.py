@@ -22,7 +22,7 @@ st.set_page_config(
 )
 
 # 앱 제목
-st.title("📈 AI 주식 트레이닝 웹 앱")
+st.header("📈 AI 주식 트레이닝 웹 앱")
 st.markdown("---")
 
 # 사이드바에 메뉴 생성
