@@ -7,6 +7,12 @@ import random
 import yfinance as yf
 import google.generativeai as genai
 import json
+import FinanceDataReader as fdr
+
+@st.cache_data
+def get_krx_stock_list():
+    # 한국 주식 전체 목록을 한 번만 불러와서 캐싱합니다.
+    return fdr.StockListing('KRX')
 
 # 페이지 기본 설정
 st.set_page_config(
@@ -21,7 +27,7 @@ st.markdown("---")
 
 # 사이드바에 메뉴 생성
 st.sidebar.title("메뉴 선택")
-menu = st.sidebar.selectbox(
+menu = st.bar.selectbox(
     "원하는 기능을 선택하세요:",
     ["내 매매 타점 복기", "차트 트레이닝 퀴즈"]
 )
@@ -839,7 +845,7 @@ if menu == "내 매매 타점 복기":
     st.header("📊 내 매매 타점 복기")
     
     # Gemini API 키 입력 (사이드바 최상단)
-    st.sidebar.subheader("🔑 API 설정")
+    st.bar.subheader("🔑 API 설정")
     
     # 1. 초기 키 값 설정 (st.secrets에서 자동 불러오기)
     default_api_key = ""
